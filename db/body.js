@@ -1,5 +1,5 @@
 const{ default: mongoose } =require("mongoose");
-const register = require("/.register");
+const register = require("./register");
 const DataBase_Name = process.env.DataBase_Name||"vehicle";
 
 const URI = process.env.Mongo||"mongodb+srv://vehicle:vehicle@cluster0.elwmgmk.mongodb.net"

@@ -24,4 +24,17 @@ app.post('/register', async (req, res) => {
     register ? res.status(201).json({msg: "Success", data: register}) : res.status(500).json({msg: "Error", data: register})
 })
 
+app.get('/status', async (req, res) => {
+    const  body= req.body;
+
+    const status = await register1.create({
+        vehicleStatus: body.vehicleStatus,
+        engineHealth: body.engineHealth,
+        expirePollution: body.expirePollution,
+        accident: body.accident
+    });
+
+    status ? res.status(201).json({msg: "Success", data: status}) : res.status(500).json({msg: "Error", data: status})
+})
+
 app.listen(PORT, () => console.log(`Application listening on port ${PORT}!`))

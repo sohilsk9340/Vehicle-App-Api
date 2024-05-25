@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
-const {register1} = require('./db/body');
+const {register1, status1} = require('./db/body');
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -27,7 +27,7 @@ app.post('/register', async (req, res) => {
 app.get('/status', async (req, res) => {
     const  body= req.body;
 
-    const status = await register1.create({
+    const status = await status1.create({
         vehicleStatus: body.vehicleStatus,
         engineHealth: body.engineHealth,
         expirePollution: body.expirePollution,

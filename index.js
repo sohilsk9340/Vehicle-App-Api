@@ -24,7 +24,7 @@ app.post('/register', async (req, res) => {
     register ? res.status(201).json({msg: "Success", data: register}) : res.status(500).json({msg: "Error", data: register})
 })
 
-app.get('/status', async (req, res) => {
+app.post('/status', async (req, res) => {
     const  body= req.body;
 
     const status = await status1.create({
